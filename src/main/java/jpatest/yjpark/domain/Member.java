@@ -1,4 +1,4 @@
-package jpatest.yjpark;
+package jpatest.yjpark.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +13,6 @@ public class Member {
 
     @Id @GeneratedValue
     private Long id;
-    private String username;
+    private String name;
 
 }

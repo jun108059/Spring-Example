@@ -1,5 +1,6 @@
 package jpatest.yjpark;
 
+import jpatest.yjpark.domain.Member;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

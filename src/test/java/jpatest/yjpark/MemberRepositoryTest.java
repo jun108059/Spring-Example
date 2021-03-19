@@ -1,5 +1,6 @@
 package jpatest.yjpark;
 
+import jpatest.yjpark.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
