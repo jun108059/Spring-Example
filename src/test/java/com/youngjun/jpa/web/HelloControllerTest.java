@@ -28,4 +28,17 @@ public class HelloControllerTest {
                 .andExpect(content().string(hello)); // 응답 내용은 검증
     }
 
+    @Test
+    public void Dto_리턴하기() throws Exception{
+        String name = "young_jun";
+        int amount = 10000;
+
+        mockMvc.perform(get("/hello/dto")
+                .param("name", name)
+                .param("amount", String.valueOf(amount)))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.name", is(name)))
+            .andExpect(jsonPath("$.amount", is(amount)));
+    }
+
 }
