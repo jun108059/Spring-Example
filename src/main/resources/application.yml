@@ -1,3 +1,6 @@
+server:
+  port: 8099
+
 spring:
   datasource:
     url: jdbc:h2:tcp://localhost/~/jpatest
@@ -9,8 +12,25 @@ spring:
       ddl-auto: create
     properties:
       hibernate:
-        # show_sql: true # System.out 으로 출력
+        show_sql: true # System.out 으로 출력
         format_sql: true
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect # MySQL 쿼리 로그
 logging.level:
   org.hibernate.SQL: debug # Log 남김
 # org.hibernate.type: trace
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    display-request-duration: true
+  api-docs:
+    path: /api-docs
+  show-actuator: true
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  paths-to-match:
+    - /hello/**
+    - /api/**
